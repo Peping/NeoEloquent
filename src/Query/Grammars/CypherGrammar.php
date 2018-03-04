@@ -403,9 +403,13 @@ class CypherGrammar extends Grammar {
      */
     public function compileOrders(Builder $query, $orders)
     {
-        return 'ORDER BY '. implode(', ', array_map(function($order){
-                return $this->wrap($order['column']).' '.mb_strtoupper($order['direction']);
-        }, $orders));
+        if (!empty($orders) && empty($query->aggregate)) {
+            return 'ORDER BY ' . implode(', ', array_map(function ($order) {
+                    return $this->wrap($order['column']) . ' ' . mb_strtoupper($order['direction']);
+                }, $orders));
+        } else {
+            return '';
+        }
     }
 
     /**

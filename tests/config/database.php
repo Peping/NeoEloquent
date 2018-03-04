@@ -11,15 +11,15 @@ return array(
             'host' => 'localhost',
             'port' => 7474,
             'user' => 'neo4j',
-            'password' => 'neo4j'
+            'password' => 'password'
         ),
 
         'default' => array(
             'driver' => 'neo4j',
             'host' => 'localhost',
             'port' => 7474,
-            'user' => '',
-            'password' => ''
+            'user' => 'neo4j',
+            'password' => 'password'
         )
     )
 );
