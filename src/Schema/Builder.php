@@ -150,6 +150,18 @@ you can do so by passing additional arguments to default migration command like:
         );
     }
 
+    /**
+     * Fallback
+     * Technically all nodes have every possible column, right?
+     *
+     * @param $table
+     * @param $column
+     * @return bool
+     */
+    public function hasColumn($table, $column)
+    {
+        return TRUE;
+    }
 
     /**
      * Create a new command set with a Closure.
